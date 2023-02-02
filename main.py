@@ -1,28 +1,40 @@
 import sqlite3
+import pysnmp
 
 try:
     conn = sqlite3.connect('switches.db')
-    create_table = '''CREATE TABLE switches_base (
+    create_table_ports_free = '''CREATE TABLE port_base (
                                 switch_name TEXT NOT NULL,
-                                switch_ip INTEGER NOT NULL  UNIQUE,
-                                switch_mac INTEGER NOT NULL UNIQUE,
-                                switch_gateway INTEGER NOT NULL,
-                                ports_all INTEGER NOT NULL,
-                                ports_free INTEGER NOT NULL,
-                                port INTEGER NOT NULL,
-                                port_mac INTEGER NOT NULL,
-                                time INTEGER NOT NULL
+                                switch_ip TEXT NOT NULL,
+                                switch_mac TEXT NOT NULL,
+                                switch_gateway TEXT NOT NULL,
+                                ports_all TEXT NOT NULL,
+                                ports_free TEXT NOT NULL,
+                                time TEXT NOT NULL
                                 );'''
+    create_table_ports_mac = ''' CREATE TABLE mac_base (
+                                switch_ip TEXT NOT NULL ,
+                                port TEXT NOT NULL,
+                                port_mac TEXT NOT NULL,
+                                time TEXT NOT NULL
+                                );'''
+
     cur = conn.cursor()
     print("База данных подключена к SQLite")
-    cur.execute(create_table)
+    cur.execute(create_table_ports_free)
+    cur.execute(create_table_ports_mac)
     conn.commit()
-    print("Таблица SQLite создана")
+    #print("Таблица SQLite создана")
 
     cur.close()
 
+
+
+    
 except sqlite3.Error as error:
     print("Ошибка при подключении к БД SQLite", error)
+
+
 
 finally:
     if (conn):

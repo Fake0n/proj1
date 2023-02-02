@@ -9,7 +9,8 @@ try:
                                 switch_gateway INTEGER NOT NULL,
                                 ports_all INTEGER NOT NULL,
                                 ports_free INTEGER NOT NULL,
-                                port_mac INTEGER NOT NULL
+                                port_mac INTEGER NOT NULL,
+                                time INTEGER NOT NULL
                                 );'''
     cur = conn.cursor()
     print("База данных подключена к SQLite")

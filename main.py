@@ -9,6 +9,7 @@ try:
                                 switch_gateway INTEGER NOT NULL,
                                 ports_all INTEGER NOT NULL,
                                 ports_free INTEGER NOT NULL,
+                                port INTEGER NOT NULL,
                                 port_mac INTEGER NOT NULL,
                                 time INTEGER NOT NULL
                                 );'''

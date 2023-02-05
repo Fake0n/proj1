@@ -4,8 +4,8 @@ from pysnmp.entity.rfc3413.oneliner import cmdgen
 cmdGen = cmdgen.CommandGenerator()
  
 errorIndication, errorStatus, errorIndex, varBindTable = cmdGen.nextCmd(
-    cmdgen.CommunityData('kppublic'),
-    cmdgen.UdpTransportTarget(('10.43.64.77', 161)),
+    cmdgen.CommunityData('public'),
+    cmdgen.UdpTransportTarget(('192.168.2.1', 161)),
     '1.3.6.1.2.1.17.7.1.2.2.1.2'    #OID МАК на порту Vlana
 )
  

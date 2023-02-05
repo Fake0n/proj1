@@ -3,7 +3,8 @@ import pysnmp
 
 try:
     conn = sqlite3.connect('switches.db')
-    create_table_ports_free = '''CREATE TABLE port_base (
+    create_table_ports_free = '''CREATE TABLE 
+                                port_base (
                                 switch_name TEXT NOT NULL,
                                 switch_ip TEXT NOT NULL,
                                 switch_mac TEXT NOT NULL,
@@ -12,7 +13,8 @@ try:
                                 ports_free TEXT NOT NULL,
                                 time TEXT NOT NULL
                                 );'''
-    create_table_ports_mac = ''' CREATE TABLE mac_base (
+    create_table_ports_mac = ''' CREATE TABLE 
+                                mac_base (
                                 switch_ip TEXT NOT NULL ,
                                 port TEXT NOT NULL,
                                 port_mac TEXT NOT NULL,

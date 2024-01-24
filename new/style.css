@@ -1,0 +1,12 @@
+h1 {
+    width: 255px;
+    margin: 0 auto 8px;
+    font-family: "Georgia", serif;
+    text-align: center;
+    font-weight: 56px;
+    line-height: 65px;
+}
+h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
